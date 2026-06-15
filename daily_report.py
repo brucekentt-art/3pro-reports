@@ -43,6 +43,13 @@ DISPLAY_NAME = PROJECT_CFG["display_name"]
 FEISHU_WEBHOOK_URL = os.environ.get("FEISHU_WEBHOOK_URL", PROJECT_CFG["feishu_webhook"])
 REPORT_URL = os.environ.get("REPORT_URL", f"{PROJECT_CFG['report_url_base']}/daily_report_{PROJECT_NAME}.html")
 
+# SMTP 邮件配置（未配置时自动跳过邮件发送）
+SMTP_SERVER = os.environ.get("SMTP_SERVER", "smtp.example.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "465"))
+SMTP_USER = os.environ.get("SMTP_USER", "user@example.com")
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "password_here")
+REPORT_RECIPIENTS = os.environ.get("REPORT_RECIPIENTS", "receiver@example.com").split(",")
+
 STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"last_run_state_{PROJECT_NAME}.json")
 # ================================================
 
