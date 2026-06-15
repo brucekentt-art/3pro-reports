@@ -16,11 +16,10 @@ permissions:
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
-    # 环境变量（非敏感配置放这里）
+    # 环境变量（非敏感配置放 config.json）
     env:
       REDMINE_URL: http://182.92.193.208/redmine
-      REDMINE_PROJECT_ID: 3pro
-      REPORT_URL: https://brucekentt-art.github.io/3pro-reports/daily_report_3pro.html
+      PROJECT_NAME: 3pro
 
     steps:
       - name: 检出仓库
@@ -37,16 +36,13 @@ jobs:
       - name: 生成报告并推送飞书
         env:
           REDMINE_API_KEY: ${{ secrets.REDMINE_API_KEY }}
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
         run: python daily_report.py
 
       - name: 提交状态文件和 HTML 报告
         run: |
           git config user.name "3pro-bot"
           git config user.email "bot@3pro.local"
-          # HTML 报告和状态文件都会被修改/新建
-          git add daily_report_3pro.html last_run_state_3pro.json
-          # 只在有变更时才提交
+          git add *.html *.json
           if git diff --staged --quiet; then
             echo "无变更，跳过提交"
           else
@@ -55,7 +51,7 @@ jobs:
           fi
 
       - name: 复制为 index.html（方便直接访问根路径）
-        run: cp daily_report_3pro.html index.html
+        run: cp daily_report_${PROJECT_NAME}.html index.html
 
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

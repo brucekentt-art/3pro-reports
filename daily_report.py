@@ -9,24 +9,42 @@ from email.mime.text import MIMEText
 from datetime import datetime
 from collections import Counter
 
-# ==================== 配置区 ====================
-REDMINE_URL = os.environ.get("REDMINE_URL", "http://182.92.193.208/redmine")
+# ==================== 配置区（从 config.json 读取）====================
+def load_config():
+    """从 config.json 加载配置，环境变量可覆盖敏感字段"""
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+    if not os.path.exists(config_path):
+        print(f"[Error] 配置文件不存在: {config_path}")
+        exit(1)
+    with open(config_path, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+
+    # 获取当前项目配置（默认第一个项目，可通过 PROJECT_NAME 环境变量切换）
+    project_name = os.environ.get("PROJECT_NAME", cfg["projects"][0]["name"])
+    project = None
+    for p in cfg["projects"]:
+        if p["name"] == project_name:
+            project = p
+            break
+    if project is None:
+        print(f"[Error] 未找到项目配置: {project_name}")
+        exit(1)
+
+    return cfg, project
+
+_cfg, PROJECT_CFG = load_config()
+
+REDMINE_URL = os.environ.get("REDMINE_URL", _cfg["redmine"]["url"] + "/redmine" if not _cfg["redmine"]["url"].endswith("/redmine") else _cfg["redmine"]["url"])
 REDMINE_API_KEY = os.environ.get("REDMINE_API_KEY", "")
-PROJECT_ID = os.environ.get("REDMINE_PROJECT_ID", "3pro")  # 项目标识改为 3pro
+PROJECT_ID = os.environ.get("REDMINE_PROJECT_ID", PROJECT_CFG["redmine_project_id"])
+PROJECT_NAME = PROJECT_CFG["name"]
+DISPLAY_NAME = PROJECT_CFG["display_name"]
 
-SMTP_SERVER = os.environ.get("SMTP_SERVER", "smtp.example.com")
-SMTP_PORT = int(os.environ.get("SMTP_PORT", "465"))
-SMTP_USER = os.environ.get("SMTP_USER", "user@example.com")
-SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "password_here")
-REPORT_RECIPIENTS = os.environ.get("REPORT_RECIPIENTS", "receiver@example.com").split(",")
+FEISHU_WEBHOOK_URL = os.environ.get("FEISHU_WEBHOOK_URL", PROJECT_CFG["feishu_webhook"])
+REPORT_URL = os.environ.get("REPORT_URL", f"{PROJECT_CFG['report_url_base']}/daily_report_{PROJECT_NAME}.html")
 
-FEISHU_WEBHOOK_URL = os.environ.get("FEISHU_WEBHOOK_URL", "https://open.feishu.cn/open-apis/bot/v2/hook/45d0284e-2119-44d3-8224-89c961a85733")
-
-# 这是一个为 3pro 预备的全新发布站点或者可以沿用旧的，我们先在本地运行。这里让它可以在运行目录独立记录状态。
-REPORT_URL = os.environ.get("REPORT_URL", "https://brucekentt-art.github.io/3pro-reports/daily_report_3pro.html")
+STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"last_run_state_{PROJECT_NAME}.json")
 # ================================================
-
-STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_run_state_3pro.json")
 
 def fetch_all_redmine_issues():
     """从 Redmine 循环分页拉取所有状态的缺陷（包括 open 和 closed）"""
