@@ -6,8 +6,15 @@ from jinja2 import Template
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from collections import Counter
+
+# 北京时间（UTC+8），解决 GitHub Actions 默认 UTC 导致报告时间偏差
+BEIJING_TZ = timezone(timedelta(hours=8))
+
+def beijing_now():
+    """返回当前北京时间 datetime 对象"""
+    return datetime.now(BEIJING_TZ)
 
 # ==================== 配置区（从 config.json 读取）====================
 def load_config():
@@ -139,7 +146,7 @@ def get_last_state_and_update(active_status_counts, active_total, closed_count):
         except Exception as e:
             print(f"[Warn] 读取状态文件出错: {e}")
 
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    date_str = beijing_now().strftime("%Y-%m-%d")
     current_snapshot = {"total": active_total, "counts": active_status_counts, "closed_count": closed_count}
 
     if today_date != date_str:
@@ -447,7 +454,7 @@ def generate_report(send_notifications=True):
     # 渲染模板
     template = Template(HTML_TEMPLATE)
     html_output = template.render(
-        date=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        date=beijing_now().strftime("%Y-%m-%d %H:%M:%S"),
         redmine_issues=active_issues_sorted,
         total_count=total_count,
         active_total=active_total,
@@ -482,7 +489,7 @@ def build_feishu_text(issues, total_count, active_total, delta_info, assignee_su
     """构造飞书可用的纯文本消息"""
     lines = []
     lines.append("🐞 Redmine 缺陷追踪日报")
-    lines.append(f"项目: {PROJECT_ID} | {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    lines.append(f"项目: {PROJECT_ID} | {beijing_now().strftime('%Y-%m-%d %H:%M')}")
     lines.append("")
 
     # 总数与变动
@@ -527,7 +534,7 @@ def send_email(report_html_path):
             html_content = f.read()
 
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = f"【每日 Redmine 缺陷监控日报 - 3pro】 - {datetime.now().strftime('%Y-%m-%d')}"
+        msg["Subject"] = f"【每日 Redmine 缺陷监控日报 - 3pro】 - {beijing_now().strftime('%Y-%m-%d')}"
         msg["From"] = SMTP_USER
         msg["To"] = ", ".join(REPORT_RECIPIENTS)
 
@@ -556,7 +563,7 @@ def send_feishu_card(total_count, active_total, closed_count, delta_info, assign
         print("[Info] 未配置飞书 Webhook URL，跳过飞书推送。")
         return False
 
-    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    now = beijing_now().strftime("%Y-%m-%d %H:%M")
 
     # 构建状态变化文本
     delta_lines = []
