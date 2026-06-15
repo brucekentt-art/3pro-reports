@@ -4,7 +4,7 @@
       "name": "3pro",
       "display_name": "3Pro 项目缺陷日报",
       "redmine_project_id": "3pro",
-      "feishu_webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/d4c081be-e956-4065-a864-aabf525bf148",
+      "feishu_webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/45d0284e-2119-44d3-8224-89c961a85733",
       "report_url_base": "https://brucekentt-art.github.io/3pro-reports"
     }
   ],

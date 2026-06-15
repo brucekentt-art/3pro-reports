@@ -2,8 +2,8 @@ name: 3pro 每日缺陷报告
 
 on:
   schedule:
-    # 北京时间每天早上 9:00 = UTC 01:00
-    - cron: '0 1 * * *'
+    # 北京时间周一至周五早上 9:00 = UTC 01:00（周末跳过）
+    - cron: '0 1 * * 1-5'
   # 允许手动触发（GitHub 网页上点按钮就能跑）
   workflow_dispatch:
 
