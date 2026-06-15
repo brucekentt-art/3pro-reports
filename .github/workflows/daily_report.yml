@@ -1,0 +1,67 @@
+name: 3pro 每日缺陷报告
+
+on:
+  schedule:
+    # 北京时间每天早上 9:00 = UTC 01:00
+    - cron: '0 1 * * *'
+  # 允许手动触发（GitHub 网页上点按钮就能跑）
+  workflow_dispatch:
+
+# 需要写入权限来提交状态文件和HTML
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    # 环境变量（非敏感配置放这里）
+    env:
+      REDMINE_URL: http://182.92.193.208/redmine
+      REDMINE_PROJECT_ID: 3pro
+      REPORT_URL: https://brucekentt-art.github.io/3pro-reports/daily_report_3pro.html
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成报告并推送飞书
+        env:
+          REDMINE_API_KEY: ${{ secrets.REDMINE_API_KEY }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+        run: python daily_report.py
+
+      - name: 提交状态文件和 HTML 报告
+        run: |
+          git config user.name "3pro-bot"
+          git config user.email "bot@3pro.local"
+          # HTML 报告和状态文件都会被修改/新建
+          git add daily_report_3pro.html last_run_state_3pro.json
+          # 只在有变更时才提交
+          if git diff --staged --quiet; then
+            echo "无变更，跳过提交"
+          else
+            git commit -m "📊 每日报告更新 $(date +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: 复制为 index.html（方便直接访问根路径）
+        run: cp daily_report_3pro.html index.html
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          # 只发布 HTML 文件，不包含脚本
+          keep_files: false

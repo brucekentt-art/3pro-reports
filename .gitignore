@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.env
+daily_report_3pro.html
+report_summary_3pro.txt
