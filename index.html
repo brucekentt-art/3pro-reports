@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>每日 Redmine 缺陷追踪简报 - 2026-06-15 06:08:49</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #fcfbf9; color: #2c2c2a; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: #ffffff; border: 0.5px solid #d3d1c7; border-radius: 12px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .header { border-bottom: 2px solid #378add; padding-bottom: 16px; margin-bottom: 24px; }
+        .header h1 { font-size: 20px; font-weight: 600; color: #042c53; margin: 0; }
+        .header p { font-size: 13px; color: #5f5e5a; margin: 4px 0 0 0; }
+        .section-title { font-size: 15px; font-weight: 600; color: #0c447c; border-left: 3px solid #378add; padding-left: 8px; margin: 24px 0 12px 0; }
+
+        /* 统计卡片 */
+        .metrics-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+        .metric-card { flex: 1; min-width: 120px; background: #e6f1fb; border-radius: 8px; padding: 12px; border: 0.5px solid #b5d4f4; text-align: center; }
+        .metric-card.total-card { background: #eeedfe; border-color: #cecbf6; }
+        .metric-card.danger-card { background: #fcebeb; border-color: #f7c1c1; }
+        .metric-card.warning-card { background: #faeeda; border-color: #fac775; }
+        .metric-card.success-card { background: #eaf3de; border-color: #c0dd97; }
+        .metric-label { font-size: 11px; color: #5f5e5a; text-transform: uppercase; margin-bottom: 4px; }
+        .metric-value { font-size: 20px; font-weight: 600; color: #2c2c2a; }
+        .metric-change { font-size: 11px; margin-top: 4px; font-weight: 500; }
+        .text-up { color: #e24b4a; }
+        .text-down { color: #1d9e75; }
+        .text-flat { color: #888780; }
+
+        /* 列表与表格 */
+        table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+        th { background-color: #f1efe8; color: #2c2c2a; font-weight: 500; text-align: left; padding: 10px; border-bottom: 1px solid #d3d1c7; }
+        td { padding: 10px; border-bottom: 1px solid #f1efe8; color: #444441; }
+        .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 500; }
+        .badge.danger { background-color: #fcebeb; color: #791f1f; }
+        .badge.warning { background-color: #faeeda; color: #633806; }
+        .badge.success { background-color: #eaf3de; color: #27500a; }
+        .badge.info { background-color: #e6f1fb; color: #0c447c; }
+        .badge.gray { background-color: #f1efe8; color: #5f5e5a; }
+
+        .footer { font-size: 11px; color: #888780; text-align: center; margin-top: 32px; border-top: 0.5px solid #d3d1c7; padding-top: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐞 Redmine 缺陷全量追踪与多维分析报告</h1>
+            <p>项目标识：<code>3pro</code> | 报告生成时间：2026-06-15 06:08:49 | 涵盖全部状态（open + closed）| 执勤助手：小八 🤖</p>
+        </div>
+
+        <div class="section-title">📊 缺陷分布与昨日变动对比</div>
+        <div class="metrics-grid">
+            <div class="metric-card total-card">
+                <div class="metric-label">活跃缺陷总数（非 Closed）</div>
+                <div class="metric-value">62</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+
+            <div class="metric-card success-card">
+                <div class="metric-label">Closed（已关闭）</div>
+                <div class="metric-value">64</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-up">+4 🔺</span>
+                    
+                </div>
+            </div>
+
+            
+            <div class="metric-card">
+                <div class="metric-label">Feedback</div>
+                <div class="metric-value">8</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-up">+4 🔺</span>
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Resolved</div>
+                <div class="metric-value">7</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-down">-1 🔻</span>
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">In Progress</div>
+                <div class="metric-value">2</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">New</div>
+                <div class="metric-value">45</div>
+                <div class="metric-change">
+                    较昨日:
+                    
+                        <span class="text-down">-3 🔻</span>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">👤 按响应人汇总 (Assignee Summary)</div>
+        <div class="metrics-grid">
+            
+            <div class="metric-card">
+                <div class="metric-label">Fei Gao</div>
+                <div class="metric-value">29</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">huang baosheng</div>
+                <div class="metric-value">16</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">Resolved</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">dk w</div>
+                <div class="metric-value">8</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">guowu jiang</div>
+                <div class="metric-value">7</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">ruoxun zhang</div>
+                <div class="metric-value">1</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">qiaoyun wang</div>
+                <div class="metric-value">1</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">Feedback</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">🔴 按优先级汇总 (Priority Summary)</div>
+        <div class="metrics-grid">
+            
+            <div class="metric-card danger-card">
+                <div class="metric-label">Urgent</div>
+                <div class="metric-value">4</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    Fei Gao(2)
+                    
+                    huang baosheng(1)
+                    
+                    dk w(1)
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card warning-card">
+                <div class="metric-label">High</div>
+                <div class="metric-value">44</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    Fei Gao(23)
+                    
+                    huang baosheng(10)
+                    
+                    dk w(5)
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card success-card">
+                <div class="metric-label">Normal</div>
+                <div class="metric-value">11</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    huang baosheng(3)
+                    
+                    Fei Gao(3)
+                    
+                    guowu jiang(3)
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card success-card">
+                <div class="metric-label">Low</div>
+                <div class="metric-value">3</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    huang baosheng(2)
+                    
+                    Fei Gao(1)
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">📋 活跃缺陷详细清单（共 62 个，已排除 Closed 64 个 | 按优先级+ID降序排列）</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 12%">缺陷 ID</th>
+                    <th style="width: 42%">主题描述</th>
+                    <th style="width: 14%">状态</th>
+                    <th style="width: 11%">优先级</th>
+                    <th style="width: 11%">指派给</th>
+                    <th style="width: 10%">更新时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14302" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14302</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - iOS插件5.4：有网关账号下，iOS同步3天历史数据，成功后历史数据页面生成的点位不是曲线，而是一个点一个点的。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            Urgent
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14255" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14255</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0009 固件：更换低电压电池，监测倒计时30结束后出现0ppm，过几分钟出现erro2</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            Urgent
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-28</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14250" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14250</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0009 固件：无网关，同步一晚上历史数据，连接成功一直在加载同步中，且能进入历史数据页面查看无日数据，有月的数据和年的数据（26号一个数据）</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            Urgent
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-02</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14217" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14217</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - 安卓插件3.4：新绑定设备生产了半年数据，进入插件同步数据时，等了13分钟左右才全部同步完成，期望小于5分钟</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            Urgent
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14357" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14357</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：添加设备，设备名称显示：米家智能温湿度计3 pro，应该是：米家智能温湿度计3 Pro</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14356" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14356</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：添加设备，引导图，二氧化碳数值旁边缺少计时器图标，默认一分钟检测应该有计时器图标</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14355" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14355</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：偶现一次，账号下有网关，添加设备后，不显示二氧化碳的数值</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14324" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14324</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：iOS偶现可以打开，用户协议和隐私，只需要反复进入法律信息就出来了</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14322" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14322</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：co2采集，1分钟设置成2分钟，半小时后出现3000左右的ppm，出现异常偏高，其他设备800左右ppm</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14319" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14319</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：连接弹窗的设备示意图还是旧版的雷龙设备，未更新</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14318" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14318</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：CO2采集间隔，2分钟倒计时还是有问题，6秒出现1环，第一环42秒、第二环36秒、第三环36秒。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14316" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14316</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：适配Xiaomi MIX Flip 2折叠手机，打开小屏在米家打开插件，出现首页右侧空白</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14314" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14314</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：双端，小米IoT后台，未配置变色龙3pro的FAQ，常见问题至少有一条</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14313" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14313</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：双端，小米IoT后台，未配置变色龙3pro的产品百科查看信息</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14311" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14311</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：未绑定30分钟窗口，在28分钟按按键后蓝牙闪烁3分钟，并没有按照剩余2分钟停止</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14308" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14308</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - iOS插件5.4：iPad每次CO2校准都失败</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14307" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14307</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - iOS插件5.4：设置页面，历史记录同步，同步按钮字体过大，应该和历史记录同步大小一致-UIUE用例</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14306" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14306</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 安卓插件5.4：修改手机字体，进入插件，查看各个页面，有些页面未显示新设置的字体-UIUE用例</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14297" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14297</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：固件升级过程中，拔电池，过一分钟插回电池，插件返回设置页，点击固件升级，升级，最后升级失败</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14296" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14296</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：固件升级成功后，设备一直显示：400</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14295" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14295</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：固件升级过程中，拔电池，插回电池，点击重试，设备升级成功，APP提示：升级失败</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14294" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14294</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：设备长广播模式，有网关，手机蓝牙半开功能打开，进入固件升级，运行开启蓝牙，手机蓝牙连接失败。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14292" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14292</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：室外校准后，回到办公室，设备一直显示400</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14289" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14289</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - iOS插件5.4：不开启长广播，ios连接插件成功率只有96%</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14288" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14288</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - iOS插件5.4：不开启长广播，点击连接设备时，数据显示---，提示“校准时间失败”  一直不显示数据</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-03</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14286" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14286</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：设备昨天户外CO2校准，晚上放入密封盒一夜+一白天，设备和海豹始终相差300左右</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14284" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14284</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - iOS插件5.4：开启长广播，偶现一次之前连接中显示同步中，然后退出插件再次进入点击已同步，提示连接失败，还在“同步中”</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14283" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14283</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - iOS插件5.4：开启长广播，有一次未同步切换到已同步状态，需要30多秒，或者2分钟左右</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14282" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14282</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - 安卓插件5.4：设备长广播状态，偶现插件点击同步，但是显示本地未连接。安卓civi2手机，时间大概在14:40左右</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-03</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14281" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14281</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 -安卓插件5.4：偶现两次，首页历史记录图片显示获取失败，点击重试依旧加载失败</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14279" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14279</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0017 固件：未绑定未对的设备，运行了半个小时，拔掉电池设备时间显示回2026/1/1 8:00，应该存储运行时间，而不是每次都重置时间</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14278" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14278</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0017 固件：日界面的最大值和月界面的最大值并不一致，只有一天的温度数据</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-01</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14276" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14276</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0015 固件：设备重复上电（插拔电池），设备co2监测到400ppm，概率50%。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14274" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14274</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0015 -安卓插件4.4：周末两天，公司窗户开着，并且没人，设备CO2一直在900-1200之间，并且从周五到周一有上升趋势</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14271" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14271</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0013 - iOS插件4.4：米家宫格页面，卡片不显示温度、湿度、CO2值</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>qiaoyun wang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-01</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14267" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14267</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0011 固件：低电量电池，2.9v上电，屏幕出现不停的闪烁，需求是开机电压：2300mV</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14256" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14256</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_00011传感器：CO2检测间隔由6s切换到60s到120s，CO2检测值会长时间不准确</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-28</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14254" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14254</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0009 - iOS插件4.4：户外一级天，海豹CO2放置半小时，CO2最低达到450，阴天户外CO2在485左右，户外校准400，这偏差有点儿大</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-28</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14248" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14248</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0009 - iOS插件3.4：设备固件已成功升级至 2.1.1_0010 版本，固件升级页面显示版本为 2.1.1_0010；但进入设备更多信息页面查看时，SDK 版本仍显示为旧版本 2.1.1_0008</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-27</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14243" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14243</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0007 - iOS插件4.4：设备降温速度慢，比变色龙3还慢。室温25度放入冷柜，-9.5度，变色龙3 显示-9.5，设备显示-4.5，差了5度。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-27</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14240" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14240</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0007 - iOS插件4.4：设备断电10分钟，上电查看，日期应该是2026年1月1日8点</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>ruoxun zhang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-01</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14233" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14233</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - iOS插件3.4：固件升级查看版本号显示"2.1.1_00052.1.1_0005" 两遍，查看IoT米家后台也是这样</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14220" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14220</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - 安卓插件3.4：手动按按键调设备时间，再次进入插件等待1分钟以上都未对时成功。</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-09</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14218" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14218</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - 安卓插件3.4：新绑设备，生成5600条，插件同步数据后历史数据展示不全，未按 180 天完整呈现</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-25</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14210" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14210</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - 安卓插件3.4：安卓插件background工作一小时，再次进入，CO2的值一直变变变</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-22</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14205" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14205</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - iOS插件3.4：设备直连插件，插件的温度和设备温度，偶现差0.1度</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-05</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14198" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14198</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0005 - iOS插件2.4：关闭手机蓝牙，进入插件，提示：连接设备弹窗，点击“已点击”</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-21</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13672" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13672</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0004 固件：试产的设备，运输期间出现过屏幕显示err01</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-14</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14352" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14352</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：用的低电量电池，co2采集间隔60秒，装上电池后，倒计时30秒结束后，就显示5000.第一次复现，第二次不复现了。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14315" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14315</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：双端，安卓1262…分享设备给iOS手机2946…账号，查看系统信息不显示设备示意图，同意后才显示。</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14305" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14305</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - iOS插件5.4：已关闭蓝牙，点击同步连接设备，提示的“蓝牙未打开”不明显，并还在连接中</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14304" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14304</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - android插件5.4：英文UI下，在首页，点击电池符号，点击更多查看电池耗材，点击几遍才能进入，交互页有延迟。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14303" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14303</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - android插件5.4：英文UI下，进入时间设置时间校准按钮，已校准的“Calibrated” 蓝色按键字体显示很挤 </td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-08</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14299" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14299</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：清空sn写入“689c77ad608030bcb2be9f9924d5b6b023648bf2” 后屏幕数值不闪烁，退出重新再次连接才闪烁。需求是未写入SN 连接状态闪烁</td>
+                    <td><span class="badge info">Resolved</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14291" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14291</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：600标气输入真空袋，半小时后，设备分别显示495/551、714，设备一致性不好</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14290" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14290</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 -安卓插件5.4：隔墙测试，25cm墙体，3pro 2m可以连接，mini和雷龙3m可以连接</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14287" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14287</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0017 - iOS插件5.4：计算12小时的网关数据，温度“109” 湿度“136” 温度和湿度网关上报频率不够，应该144个</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14265" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14265</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0011 固件：偶现ota升级全部失败，检查插件连接 发现设备异常被重置了。</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dk w</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13581" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13581</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0001 固件：开启长广播后，蓝牙连接成功的标识不明显，只有一个“·”表示成功</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-02-09</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14320" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14320</a></td>
+                    <td style="font-weight: 450;">变色龙3 pro - v2.1.1_0019 固件：低温-10以下，co2字样闪烁不明显</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14317" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14317</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0019 - 插件5.4：Android端机型，27.8度时“2”“7”有点粘连起来了，iOS显示正常</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>Fei Gao</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-10</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14285" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14285</a></td>
+                    <td style="font-weight: 450;">变色龙3 Pro 固件2.1.1_0018 -iOS插件5.4：长广播打开，1. 设备和手机远离；2.点同步；3.点取消。结果：一直显示同步中，过几秒后变成同步</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>huang baosheng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-09</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div class="footer">
+            此简报由 WorkBuddy 质量智能机器人自动统计生成并发送。<br>
+            如需调整报告收件人或每日抓取规则，请在 WorkBuddy 中联系小八修改设置。
+        </div>
+    </div>
+</body>
+</html>

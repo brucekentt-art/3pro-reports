@@ -1,0 +1,26 @@
+🐞 Redmine 缺陷追踪日报
+项目: 3pro | 2026-06-15 06:08
+
+📊 缺陷总数: 126 (活跃 62个 + 已关闭 64个)
+   活跃缺陷较昨日变动: 0
+   Closed较昨日变动: +4
+   - Feedback: 8 (较昨日: +4)
+   - Resolved: 7 (较昨日: -1)
+   - In Progress: 2 (较昨日: 0)
+   - New: 45 (较昨日: -3)
+
+👤【按响应人】
+   Fei Gao: 29个 (主要优先级: High)
+   huang baosheng: 16个 (主要优先级: High)
+   dk w: 8个 (主要优先级: High)
+   guowu jiang: 7个 (主要优先级: High)
+   ruoxun zhang: 1个 (主要优先级: High)
+   qiaoyun wang: 1个 (主要优先级: High)
+
+🔴【按优先级】
+   Urgent: 4个 → Fei Gao(2), huang baosheng(1), dk w(1)
+   High: 44个 → Fei Gao(23), huang baosheng(10), dk w(5)
+   Normal: 11个 → huang baosheng(3), Fei Gao(3), guowu jiang(3)
+   Low: 3个 → huang baosheng(2), Fei Gao(1)
+
+📋 详情请查看附件 HTML 报告。

@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "name": "3pro",
+      "display_name": "3Pro 项目缺陷日报",
+      "redmine_project_id": "3pro",
+      "feishu_webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/d4c081be-e956-4065-a864-aabf525bf148",
+      "report_url_base": "https://brucekentt-art.github.io/3pro-reports"
+    }
+  ],
+  "redmine": {
+    "url": "http://182.92.193.208",
+    "api_key_env": "REDMINE_API_KEY"
+  },
+  "github_pages": {
+    "repo": "brucekentt-art/3pro-reports",
+    "branch": "gh-pages"
+  }
+}
