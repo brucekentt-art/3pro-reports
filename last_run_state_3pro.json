@@ -11,13 +11,14 @@
   },
   "yesterday_date": "2026-06-16",
   "today": {
-    "total": 63,
+    "total": 67,
     "counts": {
-      "New": 53,
-      "In Progress": 5,
-      "Feedback": 5
+      "New": 52,
+      "Feedback": 9,
+      "Resolved": 1,
+      "In Progress": 5
     },
-    "closed_count": 79
+    "closed_count": 81
   },
   "today_date": "2026-06-17"
 }
