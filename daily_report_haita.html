@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>每日 Redmine 缺陷追踪简报 - 2026-06-29 13:36:22</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #fcfbf9; color: #2c2c2a; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: #ffffff; border: 0.5px solid #d3d1c7; border-radius: 12px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .header { border-bottom: 2px solid #378add; padding-bottom: 16px; margin-bottom: 24px; }
+        .header h1 { font-size: 20px; font-weight: 600; color: #042c53; margin: 0; }
+        .header p { font-size: 13px; color: #5f5e5a; margin: 4px 0 0 0; }
+        .section-title { font-size: 15px; font-weight: 600; color: #0c447c; border-left: 3px solid #378add; padding-left: 8px; margin: 24px 0 12px 0; }
+
+        /* 统计卡片 */
+        .metrics-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+        .metric-card { flex: 1; min-width: 120px; background: #e6f1fb; border-radius: 8px; padding: 12px; border: 0.5px solid #b5d4f4; text-align: center; }
+        .metric-card.total-card { background: #eeedfe; border-color: #cecbf6; }
+        .metric-card.danger-card { background: #fcebeb; border-color: #f7c1c1; }
+        .metric-card.warning-card { background: #faeeda; border-color: #fac775; }
+        .metric-card.success-card { background: #eaf3de; border-color: #c0dd97; }
+        .metric-label { font-size: 11px; color: #5f5e5a; text-transform: uppercase; margin-bottom: 4px; }
+        .metric-value { font-size: 20px; font-weight: 600; color: #2c2c2a; }
+        .metric-change { font-size: 11px; margin-top: 4px; font-weight: 500; }
+        .text-up { color: #e24b4a; }
+        .text-down { color: #1d9e75; }
+        .text-flat { color: #888780; }
+
+        /* 列表与表格 */
+        table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+        th { background-color: #f1efe8; color: #2c2c2a; font-weight: 500; text-align: left; padding: 10px; border-bottom: 1px solid #d3d1c7; }
+        td { padding: 10px; border-bottom: 1px solid #f1efe8; color: #444441; }
+        .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 500; }
+        .badge.danger { background-color: #fcebeb; color: #791f1f; }
+        .badge.warning { background-color: #faeeda; color: #633806; }
+        .badge.success { background-color: #eaf3de; color: #27500a; }
+        .badge.info { background-color: #e6f1fb; color: #0c447c; }
+        .badge.gray { background-color: #f1efe8; color: #5f5e5a; }
+
+        .footer { font-size: 11px; color: #888780; text-align: center; margin-top: 32px; border-top: 0.5px solid #d3d1c7; padding-top: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐞 Redmine 缺陷全量追踪与多维分析报告</h1>
+            <p>项目标识：<code>haita</code> | 报告生成时间：2026-06-29 13:36:22 | 涵盖全部状态（open + closed）| 执勤助手：小八 🤖</p>
+        </div>
+
+        <div class="section-title">📊 缺陷分布与上一日（上一次）变动对比</div>
+        <div class="metrics-grid">
+            <div class="metric-card total-card">
+                <div class="metric-label">活跃缺陷总数（非 Closed）</div>
+                <div class="metric-value">37</div>
+                <div class="metric-change">
+                    较上次:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+
+            <div class="metric-card success-card">
+                <div class="metric-label">Closed（已关闭）</div>
+                <div class="metric-value">383</div>
+                <div class="metric-change">
+                    较上次:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+
+            
+            <div class="metric-card">
+                <div class="metric-label">New</div>
+                <div class="metric-value">24</div>
+                <div class="metric-change">
+                    较上次:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Feedback</div>
+                <div class="metric-value">1</div>
+                <div class="metric-change">
+                    较上次:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">In Progress</div>
+                <div class="metric-value">12</div>
+                <div class="metric-change">
+                    较上次:
+                    
+                        <span class="text-flat">无变动 ➖</span>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">👤 按响应人汇总 (Assignee Summary)</div>
+        <div class="metrics-grid">
+            
+            <div class="metric-card">
+                <div class="metric-label">shuai guo</div>
+                <div class="metric-value">12</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">gengxueqian geng</div>
+                <div class="metric-value">10</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">dong he</div>
+                <div class="metric-value">9</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">Normal</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">xin tang</div>
+                <div class="metric-value">3</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">In Progress</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">High</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">guowu jiang</div>
+                <div class="metric-value">2</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">Normal</span>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">tianzhi zhang</div>
+                <div class="metric-value">1</div>
+                <div class="metric-change">
+                    主要状态: <span class="badge info">New</span>
+                    &nbsp;|&nbsp; 主要优先级: <span class="badge warning">Normal</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">🔴 按优先级汇总 (Priority Summary)</div>
+        <div class="metrics-grid">
+            
+            <div class="metric-card warning-card">
+                <div class="metric-label">High</div>
+                <div class="metric-value">14</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    shuai guo(6)
+                    
+                    gengxueqian geng(5)
+                    
+                    xin tang(2)
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card success-card">
+                <div class="metric-label">Normal</div>
+                <div class="metric-value">20</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    dong he(9)
+                    
+                    shuai guo(6)
+                    
+                    gengxueqian geng(3)
+                    
+                </div>
+            </div>
+            
+            <div class="metric-card success-card">
+                <div class="metric-label">Low</div>
+                <div class="metric-value">3</div>
+                <div class="metric-change">
+                    主要指派:
+                    
+                    gengxueqian geng(2)
+                    
+                    xin tang(1)
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="section-title">📋 活跃缺陷详细清单（共 37 个，已排除 Closed 383 个 | 按优先级+ID降序排列）</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 12%">缺陷 ID</th>
+                    <th style="width: 42%">主题描述</th>
+                    <th style="width: 14%">状态</th>
+                    <th style="width: 11%">优先级</th>
+                    <th style="width: 11%">指派给</th>
+                    <th style="width: 10%">更新时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14398" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14398</a></td>
+                    <td style="font-weight: 450;">海獭i-安卓 IOSAPP - v1.3.21：电话号码登录，验证码收到很慢，输入后显示验证码错误</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-23</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14350" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14350</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：Android端：登录页面没有小米登录入口</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14343" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14343</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：设备低电后，公众号也不推送信息，微信没有收到推送信息</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14341" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14341</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：公众号不推送信息，海獭高温报警号，微信没有收到推送信息（因为英文名称太长了）</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14335" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14335</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：海獭监测体温计、温度和手机上显示不一致、安卓手机30分钟曲线和iOS30分钟的曲线，也不一致</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14334" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14334</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：iOS端：海獭监测体温计，体温计在身体上，温度不准，上下跳动的感觉，34、35、37、32度</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14152" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14152</a></td>
+                    <td style="font-weight: 450;">海獭安卓APP - v1.3.16：公众号如果取消关注再去App扫描，没有关注按键，关注不了公众号，新用户扫描二维码绑定公众号也是没有关注按钮</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-18</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14128" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14128</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.11：（要加历史记录）海獭在线，监测体温计，返回查看档案，没有记录海獭监测的温度数据</td>
+                    <td><span class="badge info">Feedback</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-19</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13996" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13996</a></td>
+                    <td style="font-weight: 450;">【内测】海獭安卓APP - v1.3.7：在基站监测的界面当中看不到室温的温湿度是吗？这个最好把功能加上。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-19</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13990" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13990</a></td>
+                    <td style="font-weight: 450;">海獭安卓APP - v1.3.7：海獭监测六小时，是否提示用户更换双面胶</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13917" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13917</a></td>
+                    <td style="font-weight: 450;">海獭iOS APP - v1.3.6：体温计40度左右，放入冰箱冷冻室，温度降到19度，会反弹回40度，又下降到19度，反弹到40度，如此反复</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-09</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13832" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13832</a></td>
+                    <td style="font-weight: 450;">海獭安卓APP - v1.3.4：基站绑定体温计，扫描体温计背面二维码，很难扫上</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-04-24</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13820" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13820</a></td>
+                    <td style="font-weight: 450;">海獭 iOS APP - v1.3.3：iPad 记录温度的曲线，全是点，没有连成线</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>xin tang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-20</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/13800" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#13800</a></td>
+                    <td style="font-weight: 450;">海獭安卓APP - v1.3.3：英文UI显示混乱，需要优化</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge danger">
+                            High
+                        </span>
+                    </td>
+                    <td>xin tang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14358" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14358</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：iOS端：海獭检测体温计在首页2分钟曲线，显示的温度和曲线下最新刷新的温度不一致</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14345" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14345</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：无绑定基站，进入基站列表点击去购买图片，不是超链接不能跳转到淘宝</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14342" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14342</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：办公室连接海獭测温偏低大概35多，晚上盖被子情况36.5左右</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14337" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14337</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：报警震动有延迟，如报警一会了，点击取消报警，还会一直震个2-5秒</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14336" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14336</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：iOS端：新下载安装，提示授权蓝牙连接设备权限，如果不选择《允许》《不允许》操作，无法退出App</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14332" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14332</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：双端：关闭网络，插件档案创建不生效，直连体温计时创建和在左侧菜单页点击创建情况一致</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14326" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14326</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.21：android端：华为P50 pro，首次登录拒绝所有权限，进入直接测温，弹窗提示打开权限，手机顶部一直闪烁</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-18</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14202" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14202</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.18：公众号--点击弹幕进入论坛，是空白页，加载不出开小程序页面，展示空白</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14193" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14193</a></td>
+                    <td style="font-weight: 450;">海獭App - v1.3.16：android端和iOS端：同一账号在多款移动设备登录使用时，（三星s20 iPhone14）海獭测温数据曲线呈现异常波浪形态；本机绑定基站及亲友的基站的数据曲线均出现一致波浪异常，数据展示失真。</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-17</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14186" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14186</a></td>
+                    <td style="font-weight: 450;">海獭APP - v1.3.16：android&iOS双端：新板App，直连体温计，没有“社交分享”功能</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>tianzhi zhang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-20</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14162" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14162</a></td>
+                    <td style="font-weight: 450;">海獭安卓APP - v1.3.16：新用户扫描公众号二维码关注，不显示海獭的名称，显示“GG” 和不能关注公众号</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-18</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14159" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14159</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.16：公众号绑定跳转流程麻烦，显示二维码并不能跳转，需要截屏保存二维码，在到微信扫描再关注公众号</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-18</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14143" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14143</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.12：在公众号显示的图片文字模糊</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-16</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14131" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14131</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.11：个人中心扫描二维码，点击权限拒绝，再次扫描没有发起权限同意弹窗。</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14130" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14130</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.11：个人中心删除账号，提示5天内删除，旧版是联系客服才能删除账号、不能是删除账号应该是注销账号</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-22</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14108" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14108</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.11：直连体温计时，开启温度补偿，补偿字样显示在弹幕中，旧版显示在体温下</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>dong he</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14055" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14055</a></td>
+                    <td style="font-weight: 450;">【内侧-丹丹】海獭iOS App - v1.3.7：用直连体温计时，建议增加提示“海獭监测体温计会断开连接报警等”，不然设备会莫名其妙的响起</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14046" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14046</a></td>
+                    <td style="font-weight: 450;">【内侧-丹丹】海獭iOS App - v1.3.7：1格电关机待机12小时（一晚上），无法开机了。1格电一晚上不开机也会消耗光吗？</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-12</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14028" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14028</a></td>
+                    <td style="font-weight: 450;">【内测-怪怪】海獭iOS APP - v1.3.7：短期内退出app后再打开需要再次重新登陆，进入后界面变为注意事项界面（界面排版需调整，字体过小，不专门看注意不到需要注意什么），进入app后提示账号其他设备登录（显示首次登陆记录），确定后直接退出账号，仍需重复操作登录</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>shuai guo</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-09</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14009" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14009</a></td>
+                    <td style="font-weight: 450;">【内测】海獭安卓APP - v1.3.7：Q&A需要全面检查一下，有的信息已经过时了。</td>
+                    <td><span class="badge info">New</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Normal
+                        </span>
+                    </td>
+                    <td>guowu jiang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-05-04</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14340" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14340</a></td>
+                    <td style="font-weight: 450;">海獭 - v5.3.3109：直连蓝牙窗口，按按键后应该发起1分钟广播可连接广播，现在按按键连接后断开蓝牙就关闭了，没到1分钟</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-15</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14163" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14163</a></td>
+                    <td style="font-weight: 450;">海獭iOSAPP - v1.3.16：新绑定海獭，选择wifi配网时，点击进入设置跳转的App设置，应该是wifi设置页面</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>xin tang</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="http://182.92.193.208/redmine/issues/14068" target="_blank" style="color: #378add; text-decoration: none; font-weight: 500;">#14068</a></td>
+                    <td style="font-weight: 450;">海獭 - v5.3.3039：充电一格到2格很快，约5分钟左右就显示2格电量了</td>
+                    <td><span class="badge info">In Progress</span></td>
+                    <td>
+                        <span class="badge gray">
+                            Low
+                        </span>
+                    </td>
+                    <td>gengxueqian geng</td>
+                    <td style="font-size: 11px; color: #888780;">2026-06-11</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div class="footer">
+            此简报由 WorkBuddy 质量智能机器人自动统计生成并发送。<br>
+            如需调整报告收件人或每日抓取规则，请在 WorkBuddy 中联系小八修改设置。
+        </div>
+    </div>
+</body>
+</html>
