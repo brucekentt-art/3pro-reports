@@ -1,26 +1,26 @@
 🐞 Redmine 缺陷追踪日报
-项目: 3pro | 2026-07-03 19:12
+项目: 3pro | 2026-07-06 22:17
 
-📊 缺陷总数: 197 (活跃 56个 + 已关闭 141个)
-   活跃缺陷较昨日变动: -1
-   Closed较昨日变动: +3
-   - Feedback: 8 (较昨日: 0)
-   - New: 37 (较昨日: -2)
-   - Resolved: 1 (较昨日: +1)
-   - In Progress: 10 (较昨日: 0)
+📊 缺陷总数: 211 (活跃 57个 + 已关闭 154个)
+   活跃缺陷较昨日变动: +1
+   Closed较昨日变动: +13
+   - New: 32 (较昨日: -5)
+   - Feedback: 13 (较昨日: +5)
+   - Resolved: 3 (较昨日: +2)
+   - In Progress: 9 (较昨日: -1)
 
 👤【按响应人】
-   Fei Gao: 25个 (主要优先级: High)
-   dk w: 16个 (主要优先级: Normal)
-   qiaoyun wang: 8个 (主要优先级: High)
-   huang baosheng: 3个 (主要优先级: Normal)
-   guowu jiang: 2个 (主要优先级: High)
+   Fei Gao: 19个 (主要优先级: Normal)
+   dk w: 15个 (主要优先级: High)
+   qiaoyun wang: 11个 (主要优先级: High)
+   huang baosheng: 7个 (主要优先级: Normal)
+   guowu jiang: 3个 (主要优先级: High)
    mingmin bai: 2个 (主要优先级: High)
 
 🔴【按优先级】
-   Urgent: 4个 → Fei Gao(2), dk w(1), guowu jiang(1)
-   High: 31个 → Fei Gao(14), qiaoyun wang(7), dk w(6)
-   Normal: 16个 → dk w(7), Fei Gao(6), huang baosheng(2)
-   Low: 5个 → Fei Gao(3), dk w(2)
+   Urgent: 3个 → dk w(1), Fei Gao(1), guowu jiang(1)
+   High: 28个 → Fei Gao(8), qiaoyun wang(8), dk w(6)
+   Normal: 22个 → Fei Gao(9), dk w(6), huang baosheng(4)
+   Low: 4个 → dk w(2), huang baosheng(1), Fei Gao(1)
 
 📋 详情请查看附件 HTML 报告。
