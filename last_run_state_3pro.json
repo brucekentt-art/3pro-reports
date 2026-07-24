@@ -7,18 +7,18 @@
       "Feedback": 12,
       "In Progress": 5
     },
-    "closed_count": 170
+    "closed_count": 171
   },
-  "yesterday_date": "2026-07-22",
+  "yesterday_date": "2026-07-23",
   "today": {
-    "total": 59,
+    "total": 60,
     "counts": {
+      "Feedback": 13,
       "New": 34,
       "Resolved": 8,
-      "Feedback": 12,
       "In Progress": 5
     },
     "closed_count": 171
   },
-  "today_date": "2026-07-23"
+  "today_date": "2026-07-24"
 }
