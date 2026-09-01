@@ -9,16 +9,16 @@
     },
     "closed_count": 173
   },
-  "yesterday_date": "2026-08-28",
+  "yesterday_date": "2026-08-31",
   "today": {
     "total": 60,
     "counts": {
-      "New": 35,
-      "Feedback": 14,
-      "Resolved": 6,
+      "Feedback": 17,
+      "Resolved": 12,
+      "New": 26,
       "In Progress": 5
     },
     "closed_count": 173
   },
-  "today_date": "2026-08-31"
+  "today_date": "2026-09-01"
 }
