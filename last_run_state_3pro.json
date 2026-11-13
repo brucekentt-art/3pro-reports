@@ -2,14 +2,14 @@
   "yesterday": {
     "total": 69,
     "counts": {
-      "New": 38,
-      "Feedback": 16,
+      "Feedback": 17,
+      "New": 37,
       "Resolved": 10,
       "In Progress": 5
     },
     "closed_count": 179
   },
-  "yesterday_date": "2026-11-11",
+  "yesterday_date": "2026-11-12",
   "today": {
     "total": 69,
     "counts": {
@@ -20,5 +20,5 @@
     },
     "closed_count": 179
   },
-  "today_date": "2026-11-12"
+  "today_date": "2026-11-13"
 }
