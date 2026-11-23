@@ -1,16 +1,5 @@
 {
   "yesterday": {
-    "total": 76,
-    "counts": {
-      "New": 40,
-      "Resolved": 14,
-      "Feedback": 17,
-      "In Progress": 5
-    },
-    "closed_count": 181
-  },
-  "yesterday_date": "2026-11-19",
-  "today": {
     "total": 78,
     "counts": {
       "New": 42,
@@ -20,5 +9,16 @@
     },
     "closed_count": 181
   },
-  "today_date": "2026-11-20"
+  "yesterday_date": "2026-11-20",
+  "today": {
+    "total": 79,
+    "counts": {
+      "New": 40,
+      "Resolved": 17,
+      "Feedback": 17,
+      "In Progress": 5
+    },
+    "closed_count": 181
+  },
+  "today_date": "2026-11-23"
 }
