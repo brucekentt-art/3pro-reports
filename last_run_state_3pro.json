@@ -1,15 +1,15 @@
 {
   "yesterday": {
-    "total": 79,
+    "total": 76,
     "counts": {
-      "New": 40,
-      "Resolved": 17,
+      "New": 42,
+      "Resolved": 12,
       "Feedback": 17,
       "In Progress": 5
     },
-    "closed_count": 181
+    "closed_count": 186
   },
-  "yesterday_date": "2026-11-24",
+  "yesterday_date": "2026-11-25",
   "today": {
     "total": 76,
     "counts": {
@@ -20,5 +20,5 @@
     },
     "closed_count": 186
   },
-  "today_date": "2026-11-25"
+  "today_date": "2026-11-26"
 }
